@@ -1,28 +1,26 @@
 import matplotlib.pyplot as plt
-import constants
 
-from constants import *
+from Point import Point
+from pltUtils import display_plot_with_data
 from pltUtils import config_plt
-from randomGenerators import generate_random_zone, generate_coordinate_near_average
+from randomGenerators import generate_new_data, generate_random_number_of_centroids
 
-colors = []
-xPoints = []
-yPoints = []
+# generate_new_data()
+# config_plt()
+# display_plot_with_data()
 
-with open('data.txt', 'a') as f:
-    for i in range(constants.dataSize):
-        (zoneX, zoneY, zoneColor), zoneIndex = generate_random_zone()
-        colors.append(zoneColor)
-        randomXCoord = generate_coordinate_near_average(zoneX)
-        xPoints.append(randomXCoord)
-        randomYCoord = generate_coordinate_near_average(zoneY)
-        yPoints.append(randomYCoord)
-        newRow = "{} {} {} \n".format(randomXCoord, randomYCoord, zoneIndex)
-        f.write(newRow)
+points = []
 
-config_plt()
+# read points and generate array
+with open('data.txt') as f:
+    lines = f.readlines()
+    for line in lines:
+        words = line.split()
+        points.append(Point(float(words[0]), float(words[1])))
 
-for i in range(0, dataSize):
-    plt.scatter(xPoints[i],yPoints[i],c=colors[i],s=20,linewidth=0)
+centroids = []
+n_of_centroids = generate_random_number_of_centroids()
+for i in range(1, n_of_centroids):
+    rand_x =
 
-plt.show()
+print(n_of_centroids)

@@ -10,4 +10,6 @@ yAxisMax = 300
 xAxisMin = -300
 yAxisMin = -300
 dataSize = 1000
+minCentroids: int = 2
+maxCentroids: int = 6
 numberOfZones = len(zones)
