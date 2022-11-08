@@ -11,5 +11,18 @@ xAxisMin = -300
 yAxisMin = -300
 dataSize = 1000
 minCentroids: int = 2
-maxCentroids: int = 6
+maxCentroids: int = 10
 numberOfZones = len(zones)
+available_colors = [
+    'blue',
+    'red',
+    'green',
+    'pink',
+    'brown',
+    'gray',
+    'orange',
+    'black',
+    'yellow',
+    'olive',
+    'cyan'
+]
